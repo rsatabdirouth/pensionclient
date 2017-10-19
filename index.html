@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html ng-cloak ng-app="mainApp" ng-controller="MainCtrl as ctrl" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>true Pension</title>
+
+  <!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link href="./assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="./assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="./assets/css/responsive.css" rel="stylesheet" type="text/css">
+    
+    <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+    </style>
+}
+</head>
+
+<body ng-show = "isLoaded" ng-cloak>
+
+	<!--request_call_back popup-->
+   
+        <div class="modal fade" id="requestCallModal" role="dialog" ng-if="showModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="requestCallForm" name="requestForm" novalidate>
+                        <div class="modal-header">
+                            <button type="button" class="close_button" data-dismiss="modal"><img src="./assets/image/close.png" alt="" /></button>
+                            <h4 class="modal-title">Request a call back</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-sm-6 from_detailTextres">
+                                <label>Name</label>
+                                <input type="text" ng-model="ctrl.reqform.FirstName" ng-required="true" name="firstName" id="firstName" placeholder="Enter full name" class="inputform2"
+                                      />
+                            </div>
+                            <div class="col-sm-6 from_detailTextres">
+                                <label>Email</label>
+                                <input type="email" ng-model="ctrl.reqform.Email" ng-required="true" name="email" id="email" placeholder="Enter email" class="inputform2"  />
+                            </div>
+                            <div class="clr"></div>
+
+                            <div class="col-sm-6 from_detailTextres">
+                                <label>Post Code</label>
+                                <input type="text"  ukpostcode="" ng-model="ctrl.reqform.PostCode" name="Postcode" id="Postcode" placeholder="e.g. NG1 2NY" class="inputform2" ng-required="true" ng-pattern="home.ukpostvalidation"/>
+                            </div>
+                            <div class="col-sm-6 from_detailTextres">
+                                <label>Phone Number</label>
+                               <input type="text" class="inputform2"  placeholder="Enter phone no." name="homePhone" id="homePhone" type="text" ng-pattern="/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/"
+                                      ng-model="ctrl.reqform.homePhone" ng-required="true"/>
+
+                                
+                                
+                                
+                            </div>
+                            <div class="clr"></div>
+
+                            <div class="col-sm-6 from_detailTextres">
+                                <label>Best Time To Call</label>
+                                <select class="inputform2" name="contactTime" id="contactTime" ng-model="ctrl.reqform.ContactTime" ng-required="true">
+                                    <option value="">Select...</option>
+                                    <option value="1">Morning</option>
+                                    <option value="2">Afternoon</option>
+                                    <option value="3">Evening</option>
+                                    <option value="4">Anytime</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6 from_detailTextres">
+                                <label>Approximate Value of Pensions (£)</label>
+                                <input type="number" ng-model="ctrl.reqform.PensionValue" ng-required="true" name="PensionValue" id="PensionValue" placeholder="Pensions value £ " class="inputform2" />
+                            </div>
+                            <div class="clr"></div>
+
+                            <div class="howMeny_tpp">
+                                <div class="col-sm-9 from_detailTextres">
+                                    <label for="name" style="padding-top:10px;">
+                                        How many pension excluding State pension do you hold
+                                    </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="inputform2" name="ExistPensions" ng-model="ctrl.reqform.ExistPensions" id="existPensions" ng-required="true">
+                                        <option value="0">None</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                    </select>
+                                </div>
+                                <div class="clr"></div>
+                            </div>
+                            <div class="clr"></div>
+
+                            <div class="popup_botton_div">
+                                <div class="btnName" style="display:none;">Call me back</div>
+                                <input type="submit" id="requestSubmit" class="submit_button" value="Call me back" ng-click="ctrl.saveRequestFormData(requestForm,$event)" ng-disabled="ctrl.formSubmitted">
+                            </div>
+                            <div class="clr"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!--end_req-->
+
+  
+
+	<header>
+		<div class="container">
+			<div class="col-md-3 no-padding">
+				<a id="" href="#/pension-plan" class="">
+					<img src="./assets/image/logo.png" alt="logo" class="imgRES"/>
+				</a>
+			</div>
+			<div class="col-md-3 col-md-offset-6 no-padding">
+				<div class="req_button">
+					<a data-toggle="modal" data-target="#requestCallModal" class="reqButton">Request a call back</a>
+				</div>
+			</div>
+		</div>
+	</header><!--End_header-->
+
+    <div ui-view></div>
+	
+	<!--<div class="brand_section">
+		<div class="container">
+			<h3 class="col-sm-3 no-padding">Compare top provider including:</h3>
+			<ul class="sub_brand col-sm-9 no-padding">
+				<li><img src="./assets/image/brand_1.jpg" class="brandpic"/></li>
+				<li><img src="./assets/image/brand_2.jpg" class="brandpic"/></li>
+				<li><img src="./assets/image/brand_3.jpg" class="brandpic"/></li>
+				<li><img src="./assets/image/brand_7.jpg" class="brandpic"/></li>
+				<li><img src="./assets/image/brand_5.jpg" class="brandpic"/></li>
+				<li><img src="./assets/image/brand_6.jpg" class="brandpic"/></li>
+				<li><img src="./assets/image/brand_4.jpg" class="brandpic"/></li>
+				<div class="clr"></div>
+			</ul>
+		</div>
+	</div>End_brand-->
+	
+	<footer class="page-footer">
+		<div class="footer">
+			<ul>
+				<li><a ui-sref="home.aboutUs" target="_blank">About Us </a></li>
+				<li>|</li>
+				<li class="resfooter"><a ui-sref="home.contactUs" target="_blank">Contact Us </a></li>
+				<li class="resfooter">|</li>
+				<li><a ui-sref="home.termsAndConditions" target="_blank">Terms & Conditions</a></li>
+				<li>|</li>
+				<li><a ui-sref="home.privacyPolicy" target="_blank">Privacy Policy</a></li>
+				<li>|</li>
+				<li><a ui-sref="home.cookiePolicy" target="_blank">Cookie Policy</a></li>
+				<li>|</li>
+				<li><a ui-sref="comlainHandlingProcedure" target="_blank">Complaint Handling Procedure</a></li>
+				<li>|</li>
+				<li><a ui-sref="home.howItWorks" target="_blank"> How it works</a></li>
+				<div class="clr"></div>
+			</ul>
+			<p>This web site is operated by XYZand introduces clients to regulated advisers. XYZ does not provide any finance advice and only introduces customers to <br/> regulated companies under an exemption.</p>
+			<p>© Copyright 2011-<script>document.write(new Date().getFullYear())</script> © www.xyz.co.uk. All rights reserved.</p>
+		  </div>
+	</footer><!--End_footer-->
+
+  <!--  Scripts--> 
+  <!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <script src="./Constants.js"></script>
+    <script src="./assets/lib/angular.js"></script>
+    <script src="./assets/lib/angular-ui-router.js"></script>
+    <script src="./assets/lib/angular-local-storage.js"></script>
+    <script src="./app/app.module.js"></script>
+    <script src="./app/app.config.js"></script>
+    <script src="./app/app.constants.js"></script>
+    <script src="./app/app.routes.js"></script>
+    <script src="./app/app.ctrl.js"></script>
+    <script src="./app/component/home/home.ctrl.js"></script>
+    <script src="./app/component/contactUs/contactUs.ctrl.js"></script>
+    <script src="./app/component/Form/longForm.ctrl.js"></script>
+    <script src="./app/component/homeDetails/homeDetails.ctrl.js"></script>
+    <script src="./app/component/ThankYou/formThank/formThank.ctrl.js"></script>
+    <script src="./app/component/ThankYou/govtFormThank/govtFormThank.ctrl.js"></script>
+    <script src="./app/component/ThankYou/requestThank/requestThank.ctrl.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="./assets/js/myScript.js"></script>
+
+<!--[if lt IE 9]>
+       <link href="/Content/css/ie8.css" rel="stylesheet" />
+       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script>           
+              WebFontConfig = {
+                google: { families: [ 'Open+Sans:400,300,600,700:latin' ] }
+              };
+              (function() {
+                var wf = document.createElement('script');
+                wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+              })();          
+        </script>
+     <![endif]-->
+
+  </body>
+</html>

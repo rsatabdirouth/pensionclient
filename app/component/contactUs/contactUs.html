@@ -1,0 +1,88 @@
+﻿
+
+	<div class="container bodycontent">
+		<div class="col-md-7">
+			<div class="title_sec">
+				<h1>Contact Us</h1>
+			</div>
+            <form name="contactUs.contactUsForm" id="contactUsArea" style="position: relative;" novalidate>
+                <div class="contact_form" style="display:block;">
+                    <div class="col-sm-6 from_detailTextres">
+                        <label>Name</label>
+                        <input type="text" data-validation="required" ng-model="contactUs.contactForm.FirstName" name="FirstName" id="FirstName" placeholder="Enter full name" class="inputform2"/>
+                              
+                    </div>
+                    <div class="col-sm-6 from_detailTextres">
+                        <label>Email</label>
+                        <input class="inputform2" data-validation="email" ng-model="contactUs.contactForm.Email" name="Email" id="Email" placeholder="Enter email" type="email" />
+                    </div>
+                    <div class="clr"></div>
+                    <div class="col-sm-6 from_detailTextres">
+                        <label>Phone Number</label>
+                        <input class="inputform2" name="HomePhone" id="HomePhone" ng-model="contactUs.contactForm.HomePhone" data-validation="ukphone" placeholder="Enter phone number" type="text"/>
+                               
+                    </div>
+                    <div class="col-sm-6 from_detailTextres">
+                        <label>Best Time To Call</label>
+                        <select class="inputform2" name="ContactTime" id="ContactTime" ng-model="contactUs.contactForm.ContactTime" data-validation="required">
+                            <option value="">Select...</option>
+                            <option value="1">Morning</option>
+                            <option value="2">Afternoon</option>
+                            <option value="3">Evening</option>
+                            <option value="4">Anytime</option>
+                        </select>
+                    </div>
+                    <div class="clr"></div>
+
+                    <div class="col-sm-12">
+                        <div class="contactOne">
+                            <label for="exampleTextarea">Your Message</label>
+                            <textarea class="inputform2" id="Message" ng-model="contactUs.contactForm.Message" name="Message" placeholder="Type your text..." rows="3" style="height:inherit;"></textarea>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+
+                    <div class="popup_botton_div">
+                        <!-- <div class="btnName" style="display:none;">Call me back</div> -->
+                        <input type="submit" class="send_button" value="Send" ng-click="contactUs.saveContactFormData(contactUs.contactUsForm,$event); true" ng-disabled="contactUs.formSubmitted">
+                    </div>
+                </div>
+             </form>
+
+            <div class="contact_thankU" id="thankArea">
+                <div class="thankyou_icon2">
+                    <img src="./assets/image/thank_you.png" alt="" class="imgcuntry" />
+                </div>
+                <h1>Thank You !</h1>
+                <h2>{{contactUs.contactForm.FirstName}}</h2>
+                <p></p>
+            </div>
+        </div>
+		<div class="col-md-4 col-md-offset-1 addressSection">
+			<p>
+				truePensionPlan.co.uk is a trading style of Click Search Media Ltd which is registered in England and Wales, <b>Registration No. 07849566.</b>
+			</p>
+			<p>
+				<b>Registered address</b> : Click Search Media Limited, 4 Imperial Place, Maxwell Road, Borehamwood, Hertfordshire, WD6 1JN.
+			</p>
+		</div>
+	</div><!--End_bodycontent-->
+	
+
+<div class="brand_section">
+    <div class="container">
+        <h3 class="col-sm-3 no-padding">Compare top provider including:</h3>
+        <ul class="sub_brand col-sm-9 no-padding">
+            <li><img src="./assets/image/brand_1.jpg" class="brandpic" /></li>
+            <li><img src="./assets/image/brand_2.jpg" class="brandpic" /></li>
+            <li><img src="./assets/image/brand_3.jpg" class="brandpic" /></li>
+            <li><img src="./assets/image/brand_7.jpg" class="brandpic" /></li>
+            <li><img src="./assets/image/brand_5.jpg" class="brandpic" /></li>
+            <li><img src="./assets/image/brand_6.jpg" class="brandpic" /></li>
+            <li><img src="./assets/image/brand_4.jpg" class="brandpic" /></li>
+            <div class="clr"></div>
+        </ul>
+    </div>
+</div><!--End_brand-->
+
+<script type="text/javascript" src="./assets/js/myScript.js"></script>

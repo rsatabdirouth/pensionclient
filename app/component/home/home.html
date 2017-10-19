@@ -1,0 +1,163 @@
+
+<div class="index-banner">
+    <div class="container rescontainer">
+        <div class="col-md-7 no-padding bannertitle">
+            <!--<h1>Fast <span>Response</span> <br /><span>100%</span> Confidential <span>No Charge</span></h1>-->
+            <h1>Get the advantages <span>of retirement savings</span></h1>
+            <ul>
+                <li>Retirement planning</li>
+                <li>Retirement calculators</li>
+                <li>Estimate your retirement benefits</li>
+            </ul>
+        </div>
+    
+        <!-----{{home.addShortForm | json}}---->
+        <div class="col-md-5 formsection no-padding">
+            <h3>Safe. Secure. Confidential</h3>
+            <div class="inputForm">
+                <form name="home.addShortForm" id="homeForm" novalidate>
+                    <div class="col-sm-6 no-padding">
+                        <div class="col-sm-4 col-xs-4 resPadding">
+                            <label class="homelabelNew" for="Title">Title</label>
+                            
+                            <!--data-val-required="The Title field is required."--> 
+                            <select class="inputform" ng-model="home.shortform.Title" required>  
+                               <!--<option value="">Title</option>-->                            
+                                <option selected="selected" value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Miss">Miss</option>
+                                <option value="Ms">Ms</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-8 col-xs-8 resPadding">
+                            <div class="">
+                                <label class="homelabelNew">First Name</label>
+                                <input class="inputform" ng-required="true" placeholder="First Name" name="FirstName" id="FirstName" type="text" ng-model="home.shortform.FirstName">
+                                {{home.addShortForm.FirstName.$touched}}
+                               
+                            </div>
+                        </div>
+                        <div class="clr"></div>
+                    </div>
+                    <div class="col-sm-6 resPadding">
+                        <label class="homelabelNew">Last Name </label>
+                        <input class="inputform" ng-required="true" placeholder="Last Name" name="LastName" id="LastName" type="text" ng-model="home.shortform.LastName">
+                    </div>
+                    <div class="clr"></div>
+
+                    <div class="col-sm-6 no-padding">
+                        <label for="exampleInputEmail1" class="homelabelNew">Date of Birth</label>
+                        <div>
+                            <div class="col-sm-4 col-xs-4 pLeft0 resPadding">
+                              
+                                <select class="inputform Day" ng-required="true" ng-model="home.shortform.day">
+                                    <option value="">DD</option>
+                                    <option ng-repeat="day in home.days" value="{{day}}">               
+                                        {{day}}
+                                    </option>
+                                </select>
+                             </div>
+                            <div class="col-sm-4 col-xs-4 pLeft0 resPadding">
+                                <select class="inputform Month" ng-required="true" ng-model="home.shortform.month">
+                                    <option value="">MM</option>
+                                    <option ng-repeat="month in home.months" value="{{month}}">
+                                        {{month}}
+                                    </option>
+                                </select>                      
+                            </div>
+                            <div class="col-sm-4 col-xs-4 pLeft0 resPadding">
+                                <select style="padding:6px 4px;" id="Year" ng-required="true" class="inputform Year" name="Year" ng-model="home.shortform.year">
+                                    <option value="">YYYY</option>
+                                    <option ng-repeat="year in home.years" value="{{year}}">
+                                        {{year}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 resPadding">
+                        <label class="homelabelNew">Email Address</label>
+                        <input type="email" class="inputform" ng-required="true" placeholder="john@bt.co.uk" name="Email" id="Email" ng-model="home.shortform.Email">
+                    </div>
+                    <div class="clr"></div>
+
+                    <div>
+                        <div class="col-sm-6 resPadding">
+                            <label class="homelabelNew">Phone Number</label>
+                            <input class="inputform homephone" ng-required="true" placeholder="Enter phone no." name="HomePhone" id="HomePhone" type="text" ng-pattern="/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/" ng-model="home.shortform.HomePhone">
+       
+                            
+                            <span class="error" ng-show="home.shortform.Homephone.$error.pattern">Please match pattern [+91-036-78658 || 91-036-78658]</span>
+                          <!-------<div>Phone No. :</div>
+    <div>
+      <input type="text" placeholder="+91-636-78658" name="phone" ng-pattern="phoneNumbr" ng-model="phone" />
+      <span class="error" ng-show="myForm.phone.$error.required">Required!</span>
+      <span class="error" ng-show="myForm.phone.$error.minlength">Phone no not less that 10 char.</span>
+      <span class="error" ng-show="myForm.phone.$error.maxlength">Phone no not more than 11 char.</span>
+      <br><span class="error" ng-show="myForm.phone.$error.pattern">Please match pattern [+91-036-78658 || 91-036-78658]</span>
+    </div>---->
+                            
+                            
+                            
+                        </div>
+                        <div class="col-sm-6 resPadding">
+                            <label class="homelabelNew">Mobile Number (Optional)</label>
+                            <input class="inputform workphone" placeholder="Enter mobile no." name="WorkPhone" id="workPhone" type="text" ng-pattern="/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/" ng-model="home.shortform.WorkPhone" >
+                        </div>
+                        <div class="clr"></div>
+                    </div>
+                    <div class="clr"></div>
+
+                    <div class="col-sm-6 resPadding">
+                        <label for="exampleInputEmail1" class="homelabelNew">Approximate Value of Pensions<span>(£)</span></label>
+                        <input class="inputform" ng-required="true" placeholder="Pensions value £ " name="PensionValue" id="PensionValue" type="text" ng-model="home.shortform.PensionValue">
+                    </div>
+
+                    <div class="col-sm-6 resPadding">
+                        <label for="name" class="homelabelNew">
+                            How many pension excluding State pension do you hold
+                        </label>
+                        <select class="inputform" ng-required="true" ng-model="home.shortform.ExistPensions" name="ExistPensions" id="existPensions">
+                            <option value="0">None</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                    <div class="clr"></div>
+
+                    <div class="botton_div" style="margin:15px 0 0 0; text-align: center;">
+                        <input type="submit" class="nextbutton" value="Next Step" ng-click="home.saveShortFormData(home.addShortForm,$event)" ng-disabled="home.formSubmitted || !home.addShortForm.$valid" >
+                    </div>
+                </form>
+            </div>
+            
+           
+        </div>
+    </div>
+</div><!--End_banner-->
+
+<!-----<script type="text/javascript" src="./assets/js/myScript.js"></script>----->
+
+
+
+<div ui-view="home-content"></div>
+

@@ -1,0 +1,251 @@
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+
+@media (max-width: 320px){
+	.modal-body{
+		height:400px !important;
+		overflow:auto !important;
+		padding:15px 8px;
+	}
+}
+@media (max-width: 360px){
+	
+}
+@media (max-width: 480px){
+	
+}
+@media (max-width: 640px){
+	.index-banner h1 {
+		font-size: 19px;
+		line-height: 28px;
+		margin: 5px 0 0 0;
+	}
+    .imgRES{
+		width:100%;
+	}
+	
+}
+
+@media (max-width: 1080px) {
+	
+	.resconter{
+		padding:0;
+	}
+	.fromsection {
+		padding: 15px;
+		position: inherit;
+		left: inherit;
+		bottom: inherit;
+	}
+	.footer {
+		padding: 15px;
+	}
+	.footer ul{
+		width:100%;
+	}
+	.footer ul li {
+		font-size: 12px;
+	}
+	.footer p {
+		font-size: 12px;
+	}
+	.sub_brand{
+		margin-top:20px;
+	}
+	.sub_brand li {
+		width: 75px;
+		height: auto;
+		margin: 5px;
+	}
+	.capText h1 {
+		font-size: 24px;
+		line-height: 35px;
+		margin: 0;
+		padding: 20px 0;
+	}
+	.bodytext h2 {
+		font-size: 28px;
+		padding: 15px 0;
+	}
+	.collapsDiv {
+		padding: 10px 0;
+	}
+	.bodytext{
+		padding:0 10px;
+	}
+	.panel-body {
+		font-size: 14px;
+		text-align: justify;
+	}
+	.bodytext2{
+		padding:15px 10px;
+	}
+	.bodytext2 h2 {
+		font-size: 28px;
+		padding: 15px 0;
+	}
+	.bodytext2 p {
+		font-size: 14px;
+		font-weight: 400;
+		text-align: justify;
+		line-height:20px;
+		padding: 5px 0;
+	}
+	.bodytext2 ul {
+		margin: 10px 0 0 15px;
+	}
+	.bodytext2 ul li {
+		font-size: 14px;
+	}
+	
+	.contactOne{
+		padding:0 15px;
+	}
+	.sendbutton {
+		margin: 15px 0 0 15px;
+	}
+	.guide{
+		width: 100%;
+	}
+	.from_detailText{
+		padding:0;
+	}
+	.formPage{
+		padding:0;
+	}
+	.formleft{
+		height:auto;
+		margin-bottom:15px;
+	}
+/*-------------------Pop_up--------------------------*/
+
+    .res_popup {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.88);
+        z-index: 9999;
+        padding: 60px 15px 0 15px;
+    }
+
+    .child_res {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        position: relative;
+        background: #fff;
+    }
+
+        .child_res h1 {
+            font-size: 20px;
+            color: #9e2a61;
+            padding: 15px;
+            margin: 0;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .child_res h2 {
+            font-size: 14px;
+            color: #9e2a61;
+            padding: 6px 0 10px 0;
+            margin: 0;
+            font-weight:500;
+            text-align: left;
+        }
+		.child_res h4 {
+            font-size: 14px;
+            color: #9e2a61;
+            padding: 6px 0 10px 0;
+            margin: 0;
+            font-weight:500;
+            text-align: left;
+        }
+
+        .child_res p {
+            font-size: 13px;
+            color: #2a2a2a;
+            padding: 6px 0;
+            margin: 0;
+            font-weight: 400;
+            text-align: left;
+        }
+
+    .res_scrol {
+        height: 425px;
+        overflow: auto;
+        padding: 15px;
+    }
+
+    .cross_div {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+    }
+	.listText{
+		margin-left:15px;
+	}
+	.listText li{
+		margin: 0;
+		padding: 0 0 6px 0;
+		text-align: left;
+		font-size: 13px;
+		color: #2a2a2a;
+		font-weight:400;
+		line-height:24px;
+	}
+	.req_button{
+		margin-top:35px;
+	}
+	.index-banner{
+		height:inherit;
+	}
+	.rescontainer{
+		padding:0;
+	}
+	.bodycontent{
+		padding:0 0 15px 0;
+	}
+	.rightform_text{
+		display:none;
+	}
+	.formBody{
+		border-left:inherit;
+		margin-top:15px;
+		padding:0 !important;
+	}
+	.partner li{
+		width:134px;
+	}
+    .bannertitle{
+        display:none;
+    }
+    .resfooter{
+        display:none;
+    }
+    .bodycontent{
+        padding:15px;
+    }
+    header{
+        text-align:center;
+    }
+    .allpage_body{
+		padding:20px 15px 0 0;
+		/*height:auto;*/
+		overflow:auto;
+	}
+    label span{
+        display:inline;
+    }
+    .resbottom_formtext h5{
+		font-size:14px;
+		margin:15px 0;
+		font-weight:400;
+		padding:10px;
+		line-height:24px;
+        display:block !important;
+	}
+}
